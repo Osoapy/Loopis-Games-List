@@ -1,5 +1,59 @@
+// CRIANDO A FUNÇÃO ADICIONAR JOGO
+// A FUNÇÃO ADICIONAR JOGO CRIA AS TAGS EM HTML PRA CADA JOGO, SEJA ELE UM JOGO COLOCADO NA SESSÃO ATUAL OU ARMAZENADO NO LOCALSTORAGE
+function adicionarJogo(nome, descricao, favorito, novoJogo) {
+  let nenhum_jogo_ainda = document.getElementById("sem_jogos");
+  if (nenhum_jogo_ainda) { // SE ESTIVER MARCADO COMO SE NÃO TIVESSE JOGOS; RETIRE A MARCAÇÃO
+    nenhum_jogo_ainda.remove(); // TIRANDO O "Nenhum jogo foi adicionado ainda :("
+  }
+  
+  // CRIANDO OS ELEMENTOS A SEREM ADICIONADOS
+  let spanElement = document.createElement("span");
+  spanElement.classList.add("jogo_na_lista");
+  let h1Element = document.createElement("h1");
+  h1Element.classList.add("titulo_de_jogo");
+  let h2Element = document.createElement("p");
+  
+  if (novoJogo == 1){ // CASO SEJA UM JOGO NOVO, O ADICIONE E O INCLUA NA LISTA
+    let meuObjeto = {nome: nome, descricao: descricao, favorito: favorito}; // CRIANDO O OBJETO
+    let objetoSerializado = JSON.stringify(meuObjeto); // TRANSFORMANDO O OBJETO EM STRING PARA ARMAZENA-LO
+    localStorage.setItem(`objeto${contador}`, objetoSerializado); // ADICIONANDO-O AO LOCALSTORAGE
+    contador++; // ATUALIZANDO A VARIÁVEL CONTADOR JÁ QUE ADICIONAMOS MAIS UM OBJETO
+    localStorage.setItem("contador", contador); // ATUALIZANDO O CONTADOR NO LOCALSTORAGE
+    h1Element.textContent = nome; // DEFININDO O NOME QUE VAI APARECER
+    h2Element.textContent = descricao; // DEFININDO A DESCRIÇÃO QUE VAI APARECER
+    // ADICIONANDO ELES AO "SPAN"
+    spanElement.appendChild(h1Element);
+    spanElement.appendChild(h2Element);
+    // ENCONTRANDO A DIV E INCLUINDO O SPAN NELA
+    
+    if (favorito == 1) { // SE FOR FAVORITO, COLOQUE NA LISTA DE FAVORITOS
+      let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");
+      listaDeFavoritosDiv.appendChild(spanElement);
+    }
+      
+    else { // SE NÃO FOR FAVORITO, COLOQUE NA LISTA DE JOGOS NORMAIS
+      let listaDeJogosDiv = document.getElementById("lista_de_jogos");
+      listaDeJogosDiv.appendChild(spanElement);
+    }
+  }
+    
+  // SENÃO FOR UM JOGO NOVO (DE UMA SESSÃO PASSADA), O ADICIONE NA LISTA E NÃO O INCLUA NO LOCALSTORAGE
+  else {
+    // DEFININDO O TEXTO DELES COM BASE NO INPUT
+    h1Element.textContent = nome;
+    h2Element.textContent = descricao;
+    // ADICIONANDO ELES AO "SPAN"
+    spanElement.appendChild(h1Element);
+    spanElement.appendChild(h2Element);
+    // ENCONTRANDO A DIV E INCLUINDO O SPAN NELA
+    var listaDeJogosDiv = document.getElementById("lista_de_jogos");
+    listaDeJogosDiv.appendChild(spanElement);
+  }
+}
+
+
 // CRIANDO A FUNÇÃO ADICIONAR
-// A FUNÇÃO ADICIONAR CHAMA A FUNÇÃO ADICIONARJOGO E DIZ PRA ELA QUE É UM JOGO NOVO, NÃO UM JOGO QUE FOI LIDO DO LOCALSTORE DE UMA SESSÃO PASSADA
+// A FUNÇÃO ADICIONAR CHAMA A FUNÇÃO ADICIONARJOGO E DIZ PRA ELA QUE É UM JOGO NOVO, NÃO UM JOGO QUE FOI LIDO DO LOCALSTORAGE DE UMA SESSÃO PASSADA
 function adicionar(event) {
   event.preventDefault(); // PREVINE QUE AO ADICIONAR QUALQUER JOGO A PÁGINA DÊ REUNLOAD
   let nome = document.getElementById("nome_do_jogo").value; // PEGANDO O NOME DO JOGO
