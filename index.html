@@ -7,7 +7,23 @@
 <body>
   <!--https://www.figma.com/file/cApcwWZfflDtTYxqlKhvoO/Loopis-Games-List?type=design&node-id=0-1&mode=design-->
   <div id="inserir_jogos">
-    
+    <form id="formulario">
+      <h2>Preencha os campos:</h2>
+      <label>Nome do jogo:</label>
+      <input type="text" id="nome_do_jogo" placeholder="Digite o nome aqui..." />
+      <label>Descrição do jogo:</label>
+      <input type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." />
+      <div>
+        <label>Favorito?</label>
+        <input type="radio" id="sim" name="favorito" value="sim">
+        <label for="sim">Sim</label>
+        <input type="radio" id="nao" name="favorito" value="nao">
+        <label for="nao">Não</label>
+      </div>
+      <button onclick="adicionar(event)">
+        Adicionar
+      </button>
+    </form>
   </div>
   
   <div id="lista_de_jogos">
