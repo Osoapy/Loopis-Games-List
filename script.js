@@ -20,7 +20,6 @@ if (contador == 1) { // SE NÃO TIVER NENHUM JOGO (CONTADOR == 1), DIGA QUE NÃO
   spanElement.appendChild(h2Element1);
 }
 
-
 // CRIANDO A FUNÇÃO ADICIONAR JOGO
 // A FUNÇÃO ADICIONAR JOGO CRIA AS TAGS EM HTML PRA CADA JOGO, SEJA ELE UM JOGO COLOCADO NA SESSÃO ATUAL OU ARMAZENADO NO LOCALSTORAGE
 function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
@@ -109,7 +108,6 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
     }
   }
 }
-
 
 // CRIANDO A FUNÇÃO ADICIONAR
 // A FUNÇÃO ADICIONAR CHAMA A FUNÇÃO ADICIONARJOGO E DIZ PRA ELA QUE É UM JOGO NOVO, NÃO UM JOGO QUE FOI LIDO DO LOCALSTORAGE DE UMA SESSÃO PASSADA
@@ -237,13 +235,6 @@ function favoritarDesfavoritar(event) {
     ordenarHTML(paiBotaoClicado); // ORGANIZA O HTML
   }
 }
-
-
-
-
-
-
-
 
 // CRIANDO A FUNÇÃO INICIAR APÓS RECARGA
 function iniciarAposRecarga() { // UM PROBLEMA É DESCOBRIR QUANDO A PÁGINA FOI REINICIADA PARA OLHAR O LOCALSTORAGE
