@@ -1,18 +1,21 @@
 <head>
   <meta charset="utf-8">
   <title>Loopis Games List</title>
+  <meta name="keywords" content="lista, jogos, loopis">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="Imagens/icone.ico" type="image/x-icon">
 </head>
 
-<body>
+<body id="corpo_do_site">
   <!--https://www.figma.com/file/cApcwWZfflDtTYxqlKhvoO/Loopis-Games-List?type=design&node-id=0-1&mode=design-->
+  <h1 id="titulo">Loopis Games List</h1>
   <div id="inserir_jogos">
     <form id="formulario">
       <h2>Preencha os campos:</h2>
       <label class="display_block">Nome do jogo:</label>
       <input type="text" id="nome_do_jogo" placeholder="Digite o nome aqui..." />
       <label class="display_block">Descrição do jogo:</label>
-      <input type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." />
+      <textarea type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." ></textarea>
       <div>
         <label>Favorito?</label>
         <input type="radio" id="sim" name="favorito" value="sim">
@@ -20,7 +23,7 @@
         <input type="radio" id="nao" name="favorito" value="nao">
         <label for="nao">Não</label>
       </div>
-      <button onclick="adicionar(event)">
+      <button class="add_button" onclick="adicionar(event)">
         Adicionar
       </button>
     </form>
