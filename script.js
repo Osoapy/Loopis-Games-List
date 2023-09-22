@@ -36,7 +36,7 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
   let h2Element = document.createElement("p");
   h2Element.classList.add("descricao_de_jogo");
   let buttonElement = document.createElement("button");
-  buttonElement.innerHTML = 'Remover';
+  buttonElement.innerHTML = '';
   buttonElement.onclick = function(event) {
     removerJogo(event);
   };
@@ -46,6 +46,12 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
     favoritarDesfavoritar(event);
   };
   favoriteButtonElement.classList.add("botao_favorito");
+  if (favorito == 1) {
+    favoriteButtonElement.classList.add("favorito");
+  }
+  else {
+    favoriteButtonElement.classList.add("normal");
+  }
   
   if (novoJogo == 1){ // CASO SEJA UM JOGO NOVO, O ADICIONE E O INCLUA NA LISTA
     let meuObjeto = {nome: nome, descricao: descricao, favorito: favorito}; // CRIANDO O OBJETO
@@ -219,6 +225,8 @@ function favoritarDesfavoritar(event) {
     objetoSerializado = JSON.stringify(Objeto); // TRANSFORMANDO O OBJETO EM STRING PARA ARMAZENA-LO
     localStorage.setItem(`objeto${idSpan}`, objetoSerializado); // ADICIONANDO-O AO LOCALSTORAGE
     botaoClicado.innerHTML = 'Favoritar';// TROCANDO O SINAL
+    botaoClicado.classList.remove('favorito');
+    botaoClicado.classList.add("normal");
     let listaDeJogosDiv = document.getElementById("lista_de_normais");// PEGA A DIV NORMAL
     listaDeJogosDiv.appendChild(paiBotaoClicado);// JOGA O ELEMENTO
     ordenarHTML(paiBotaoClicado); // ORGANIZA O HTML
@@ -230,6 +238,8 @@ function favoritarDesfavoritar(event) {
     objetoSerializado = JSON.stringify(Objeto); // TRANSFORMANDO O OBJETO EM STRING PARA ARMAZENA-LO
     localStorage.setItem(`objeto${idSpan}`, objetoSerializado); // ADICIONANDO-O AO LOCALSTORAGE
     botaoClicado.innerHTML = 'Desfavoritar';// TROCANDO O SINAL
+    botaoClicado.classList.remove('normal');
+    botaoClicado.classList.add("favorito");
     let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");// PEGA A DIV DOS FAVORITOS
     listaDeFavoritosDiv.appendChild(paiBotaoClicado);// JOGA O ELEMENTO
     ordenarHTML(paiBotaoClicado); // ORGANIZA O HTML
