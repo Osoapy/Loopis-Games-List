@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 * {
   box-sizing: border-box;
   z-index: 0;
 }
 
 :root {
+  --fonte_formulario: 'Mooli', sans-serif;
   --cor1: #e0a2eb;
   --cor2: #674ec7;
   --cor3: #6096e5;
@@ -23,13 +26,16 @@ textarea{
 }
 
 #corpo_do_site {
+  background-color: var(--cor2);
   display: grid;
   grid-template-areas:
     "titulo titulo"
     "inserir mostrar";
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
+  margin: 0;
+  max-width: 100vw;
   width: 100vw;
-  background-color: var(--cor2);
 }
 
 #titulo {
@@ -39,11 +45,16 @@ textarea{
   background-color: var(--cor3);
 }
 
+#titulo_formulario {
+  text-align: center;
+}
+
 #inserir_jogos, #lista_de_jogos {
   background-color: var(--cor3);
   border: 4px solid var(--cor1);
   border-radius: 8px;
   display: flex;
+  justify-content: center;
   padding: 10%;
   margin: 50px;
 }
@@ -53,9 +64,9 @@ textarea{
 }
 
 #lista_de_jogos {
+  flex-direction: column;
   grid-area: mostrar;
 }
-
 
 .add_button {
   width: 50%;
@@ -87,4 +98,8 @@ textarea{
 
 .descricao_de_jogo {
   margin-top: 0;
+}
+
+.fonte_formulario {
+  font-family: var(--fonte_formulario);
 }

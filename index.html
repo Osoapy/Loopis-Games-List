@@ -7,18 +7,17 @@
 </head>
 
 <body id="corpo_do_site">
-  <!--https://www.figma.com/file/cApcwWZfflDtTYxqlKhvoO/Loopis-Games-List?type=design&node-id=0-1&mode=design
-  https://github.com/Osoapy/loopisgameslist-->
+  <!--https://www.figma.com/file/cApcwWZfflDtTYxqlKhvoO/Loopis-Games-List?type=design&node-id=0-1&mode=design-->
   <h1 id="titulo">Loopis Games List</h1>
   <div id="inserir_jogos">
     <form id="formulario">
-      <h2>Preencha os campos:</h2>
-      <label class="display_block">Nome do jogo:</label>
+      <h2 id="titulo_formulario" class="fonte_formulario">Adicionar</h2>
+      <label class="display_block fonte_formulario">Nome do jogo:</label>
       <textarea type="text" id="nome_do_jogo" placeholder="Digite o nome aqui..." /></textarea>
-      <label class="display_block">Descrição do jogo:</label>
+      <label class="display_block fonte_formulario">Descrição do jogo:</label>
       <textarea type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." ></textarea>
       <div>
-        <label>Favorito?</label>
+        <label class="fonte_formulario">Favorito?</label>
         <input type="radio" id="sim" name="favorito" value="sim">
         <label for="sim">Sim</label>
         <input type="radio" id="nao" name="favorito" value="nao">

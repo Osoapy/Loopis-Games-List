@@ -17,6 +17,7 @@ if (contador == 1) { // SE NÃO TIVER NENHUM JOGO (CONTADOR == 1), DIGA QUE NÃO
   listaDeJogosDiv.appendChild(spanElement);
   // COLOCANDO O TEXTO DENTRO DO SPAN
   h2Element1.textContent = "Nenhum jogo foi adicionado ainda :(";
+  h2Element1.classList.add("fonte_formulario");
   spanElement.appendChild(h2Element1);
 }
 
@@ -194,6 +195,7 @@ function ordenarLocalStorage(numero) {
     listaDeJogosDiv.appendChild(spanElement);
     // COLOCANDO O TEXTO DENTRO DO SPAN
     h2Element1.textContent = "Nenhum jogo foi adicionado ainda :(";
+    h2Element1.classList.add("fonte_formulario");
     spanElement.appendChild(h2Element1);
   }
 }
