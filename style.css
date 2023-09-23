@@ -140,6 +140,10 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
 }
+.add_button:hover {
+  background: #a52a2a;
+  color: var(--cor3);
+}
 
 .botao_remover, .favorito, .normal {
   border: 0;
