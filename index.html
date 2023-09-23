@@ -9,36 +9,44 @@
 <body id="corpo_do_site">
   <!--https://www.figma.com/file/cApcwWZfflDtTYxqlKhvoO/Loopis-Games-List?type=design&node-id=0-1&mode=design-->
   <h1 id="titulo">Loopis Games List</h1>
-  <div id="inserir_jogos">
-    <form id="formulario">
-      <h2 id="titulo_formulario" class="fonte_formulario">Adicionar</h2>
-      <label class="display_block fonte_formulario">Nome do jogo:</label>
-      <textarea type="text" id="nome_do_jogo" placeholder="Digite o nome aqui..." /></textarea>
-      <label class="display_block fonte_formulario">Descrição do jogo:</label>
-      <textarea type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." ></textarea>
-      <div>
-        <label class="fonte_formulario">Favorito?</label>
-        <input type="radio" id="sim" name="favorito" value="sim">
-        <label for="sim">Sim</label>
-        <input type="radio" id="nao" name="favorito" value="nao">
-        <label for="nao">Não</label>
+  <div id="container_inserir_jogos">
+    <div id="inserir_jogos">
+      <form id="formulario">
+        <h2 id="titulo_formulario" class="fonte_formulario">Adicionar um jogo</h2>
+        <label class="display_block fonte_formulario">Nome do jogo:</label>
+        <textarea type="text" id="nome_do_jogo" placeholder="Digite o nome aqui..." /></textarea>
+        <label class="display_block fonte_formulario">Descrição do jogo:</label>
+        <textarea type="text" id="descricao_do_jogo" placeholder="Descreva o jogo aqui..." ></textarea>
+        <div>
+          <label class="fonte_formulario">Favorito?</label>
+          <input type="radio" id="sim" name="favorito" value="sim">
+          <label for="sim">Sim</label>
+          <input type="radio" id="nao" name="favorito" value="nao">
+          <label for="nao">Não</label>
+        </div>
+        <div id="botao_salvar">
+          <button class="add_button" onclick="adicionar(event)">
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="container_lista_de_jogos">
+    <div id="lista_de_jogos" class="game-list-container">
+      <div id="container_listas" class="game-list">
+        <h2 id="titulo_lista" class="fonte_formulario">Lista de jogos</h2>
+        <div id="lista_de_favoritos">
+          
+        </div>
+        <div id="lista_de_normais">
+          
+        </div>
       </div>
-      <button class="add_button" onclick="adicionar(event)">
-        Salvar
-      </button>
-    </form>
-  </div>
-  
-  <div id="lista_de_jogos">
-    <div id="lista_de_favoritos">
-      
-    </div>
-    <div id="lista_de_normais">
-      
     </div>
   </div>
-  
   <script src="script.js"></script>
+  <script src="scroll.js"></script>
 </body>
 
 </html>

@@ -71,7 +71,6 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
 
     if (favorito == 1) { // SE FOR FAVORITO, COLOQUE NA LISTA DE FAVORITOS
       let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");
-      favoriteButtonElement.innerHTML = 'Desfavoritar';
       listaDeFavoritosDiv.appendChild(spanElement);
       // ORDENANDO EM ORDEM ALFABÉTICA
       ordenarHTML(spanElement);
@@ -79,7 +78,6 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
       
     else { // SE NÃO FOR FAVORITO, COLOQUE NA LISTA DE JOGOS NORMAIS
       let listaDeJogosDiv = document.getElementById("lista_de_normais");
-      favoriteButtonElement.innerHTML = 'Favoritar';
       listaDeJogosDiv.appendChild(spanElement);
       // ORDENANDO EM ORDEM ALFABÉTICA
       ordenarHTML(spanElement);
@@ -100,7 +98,6 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
     // ENCONTRANDO A DIV E INCLUINDO O SPAN NELA
     if (favorito == 1) { // SE FOR FAVORITO, COLOQUE NA LISTA DE FAVORITOS
       let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");
-      favoriteButtonElement.innerHTML = 'Desfavoritar';
       listaDeFavoritosDiv.appendChild(spanElement);
       // ORDENANDO EM ORDEM ALFABÉTICA
       ordenarHTML(spanElement);
@@ -108,7 +105,6 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
       
     else { // SE NÃO FOR FAVORITO, COLOQUE NA LISTA DE JOGOS NORMAIS
       let listaDeJogosDiv = document.getElementById("lista_de_normais");
-      favoriteButtonElement.innerHTML = 'Favoritar';
       listaDeJogosDiv.appendChild(spanElement);
       // ORDENANDO EM ORDEM ALFABÉTICA
       ordenarHTML(spanElement);
@@ -226,7 +222,6 @@ function favoritarDesfavoritar(event) {
     Objeto["favorito"] = 0 // DESFAVORITANDO NO LOCALSTORAGE
     objetoSerializado = JSON.stringify(Objeto); // TRANSFORMANDO O OBJETO EM STRING PARA ARMAZENA-LO
     localStorage.setItem(`objeto${idSpan}`, objetoSerializado); // ADICIONANDO-O AO LOCALSTORAGE
-    botaoClicado.innerHTML = 'Favoritar';// TROCANDO O SINAL
     botaoClicado.classList.remove('favorito');
     botaoClicado.classList.add("normal");
     let listaDeJogosDiv = document.getElementById("lista_de_normais");// PEGA A DIV NORMAL
@@ -239,7 +234,6 @@ function favoritarDesfavoritar(event) {
     Objeto["favorito"] = 1 // FAVORITANDO NO LOCALSTORAGE
     objetoSerializado = JSON.stringify(Objeto); // TRANSFORMANDO O OBJETO EM STRING PARA ARMAZENA-LO
     localStorage.setItem(`objeto${idSpan}`, objetoSerializado); // ADICIONANDO-O AO LOCALSTORAGE
-    botaoClicado.innerHTML = 'Desfavoritar';// TROCANDO O SINAL
     botaoClicado.classList.remove('normal');
     botaoClicado.classList.add("favorito");
     let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");// PEGA A DIV DOS FAVORITOS
