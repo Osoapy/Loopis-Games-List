@@ -9,11 +9,10 @@
 :root {
   --fonte_formulario: 'Mooli', sans-serif;
   --fonte_titulo: 'Roboto Slab', sans-serif;
-  --cor1: red;
-  --cor2: black;
-  --cor3: white;
-  --cor4: gray;
-  --cor5: black;
+  --vermelho: red;
+  --preto: black;
+  --branco: white;
+  --cinza: gray;
 }
 
 textarea {
@@ -21,7 +20,7 @@ textarea {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 2px solid var(--cor5);
+  border: 2px solid var(--preto);
   border-radius: 4px;
   box-sizing: border-box;
   resize: none;
@@ -41,7 +40,7 @@ textarea {
 }
 
 #corpo_do_site {
-  background-color: var(--cor2);
+  background-color: var(--preto);
   display: grid;
   grid-template-areas:
     "titulo titulo"
@@ -56,8 +55,8 @@ textarea {
 
 #titulo {
   align-items: center;
-  background-color: var(--cor2);
-  color: var(--cor3);
+  background-color: var(--preto);
+  color: var(--branco);
   display: flex;
   font-family: var(--fonte_titulo);
   grid-area: titulo;
@@ -66,12 +65,12 @@ textarea {
   text-align: center;
 }
 
-#titulo_formulario {
+#titulo_formulario, #titulo_lista {
   text-align: center;
 }
 
 #titulo_lista {
-  text-align: center;
+  color: white;
 }
 
 #container_inserir_jogos, #container_lista_de_jogos {
@@ -80,26 +79,27 @@ textarea {
 }
 
 #inserir_jogos, #lista_de_jogos {
-  background-color: var(--cor3);
-  border: 4px solid var(--cor1);
+  border: 4px solid var(--vermelho);
   border-radius: 8px;
   display: flex;
   height: 75vh;
   margin-left: 5vw;
   margin-right: 5vw;
   max-height: 75vh;
-  max-width: 500px;
+  max-width: 550px;
   padding-left: 5vw;
   padding-right: 5vw;
   width: 40vw;
 }
 
 #inserir_jogos {
+  background-color: var(--branco);
   grid-area: inserir;
   justify-content: center;
 }
 
 #lista_de_jogos {
+  background-color: var(--preto);
   flex-direction: column;
   grid-area: mostrar;
   justify-content: flex-start;
@@ -108,21 +108,32 @@ textarea {
 }
 
 #lista_de_jogos::-webkit-scrollbar {
-    width: 10px; 
+  width: 10px; 
 }
 
 #lista_de_jogos::-webkit-scrollbar-thumb {
-    background: var(--cor2); 
+  background: var(--preto); 
 }
 
 #lista_de_jogos::-webkit-scrollbar-track {
-    background: var(--cor4); 
+  background: var(--cinza); 
+}
+
+#container_imagem_foguete {
+  align-items: center;
+  display: flex;
+  grid-area: imagem;
+  justify-content: center;
+}
+
+#container_conteudo {
+  grid-area: conteudo;
 }
 
 .add_button {
   width: 65%;
-  background-color: var(--cor5);
-  color: var(--cor3);
+  background-color: var(--preto);
+  color: var(--branco);
   padding: 14px 20px;
   margin: 3vh 8px;
   border: none;
@@ -131,37 +142,53 @@ textarea {
 }
 
 .botao_remover, .favorito, .normal {
-  background-size: cover;
   border: 0;
   height: 25px;
   left: 0px;
   width: 25px;
 }
+
+.botao_favorito {
+  grid-area: botao_favorito;
+}
   
 .botao_remover {
+  grid-area: botao_remover;
   background: url('Imagens/lixeira.png');
 } 
 
-.favorito {
-  background: url('Imagens/estrela_inteira.png');
-}
-
-.normal {
-  background: url('Imagens/estrela_vazia.png');
+.descricao_de_jogo {
+  margin-top: 0;
 }
 
 .display_block {
   display: block;
 }
 
-.titulo_de_jogo {
-  margin-bottom: 0;
-}
-
-.descricao_de_jogo {
-  margin-top: 0;
+.favorito {
+  background: url('Imagens/estrela_inteira.png');
 }
 
 .fonte_formulario {
   font-family: var(--fonte_formulario);
+}
+
+.jogo_na_lista {
+  background-color: var(--branco);
+  border: 4px solid var(--branco);
+  border-radius: 8px;
+  display: grid;
+  grid-template-areas: "imagem conteudo botao_remover botao_favorito";
+  grid-template-columns: 1fr 7fr auto auto;
+  margin-bottom: 1vh;
+  min-height: 15vh;
+  width: 100%;
+}
+
+.normal {
+  background: url('Imagens/estrela_vazia.png');
+}
+
+.titulo_de_jogo {
+  margin-bottom: 0;
 }

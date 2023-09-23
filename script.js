@@ -32,6 +32,15 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
   // CRIANDO OS ELEMENTOS A SEREM ADICIONADOS
   let spanElement = document.createElement("span");
   spanElement.classList.add("jogo_na_lista");
+  let divImagem = document.createElement("div");
+  divImagem.id = "container_imagem_foguete";
+  let foguete = document.createElement("img");
+  foguete.src = "Imagens/foguete.png";
+  foguete.id = "imagem_foguete";
+  divImagem.appendChild(foguete);
+  spanElement.appendChild(divImagem);
+  let divConteudo = document.createElement("div");
+  divConteudo.id = "container_conteudo";
   let h1Element = document.createElement("h1");
   h1Element.classList.add("titulo_de_jogo");
   let h2Element = document.createElement("p");
@@ -64,10 +73,11 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
     h1Element.textContent = nome; // DEFININDO O NOME QUE VAI APARECER
     h2Element.textContent = descricao; // DEFININDO A DESCRIÇÃO QUE VAI APARECER
     // ADICIONANDO ELES AO "SPAN"
-    spanElement.appendChild(h1Element);
-    spanElement.appendChild(h2Element);
+    divConteudo.appendChild(h1Element);
+    divConteudo.appendChild(h2Element);
     spanElement.appendChild(buttonElement);
     spanElement.appendChild(favoriteButtonElement);
+    spanElement.appendChild(divConteudo);
 
     if (favorito == 1) { // SE FOR FAVORITO, COLOQUE NA LISTA DE FAVORITOS
       let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");
@@ -91,10 +101,11 @@ function adicionarJogo(nome, descricao, favorito, novoJogo, numero) {
     h1Element.textContent = nome;
     h2Element.textContent = descricao;
     // ADICIONANDO ELES AO "SPAN"
-    spanElement.appendChild(h1Element);
-    spanElement.appendChild(h2Element);
+    divConteudo.appendChild(h1Element);
+    divConteudo.appendChild(h2Element);
     spanElement.appendChild(buttonElement);
     spanElement.appendChild(favoriteButtonElement);
+    spanElement.appendChild(divConteudo);
     // ENCONTRANDO A DIV E INCLUINDO O SPAN NELA
     if (favorito == 1) { // SE FOR FAVORITO, COLOQUE NA LISTA DE FAVORITOS
       let listaDeFavoritosDiv = document.getElementById("lista_de_favoritos");
