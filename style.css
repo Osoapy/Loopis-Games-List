@@ -20,6 +20,10 @@
     font-size: 3.5em;
   }
 
+  .add_button {
+    font-size: 2em;
+  }
+  
   .fonte_formulario {
     font-size: 2em;
   }
@@ -51,6 +55,29 @@
     padding-right: 5vw;
     width: 60vw;
   }
+
+  .titulo_de_jogo {
+    font-size: 3em;
+  }
+
+  .descricao_de_jogo {
+    font-size: 2em;
+  }
+
+  .botao_remover, .favorito, .normal {
+    border: 0;
+    height: 50px;
+    left: 0px;
+    width: 50px;
+  }
+
+  #imagem_foguete {
+    border: 0;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px;
+  }
 }
 
 /* Altura < Largura */
@@ -77,6 +104,13 @@
     padding-left: 5vw;
     padding-right: 5vw;
     width: 40vw;
+  }
+
+  .botao_remover, .favorito, .normal {
+    border: 0;
+    height: 25px;
+    left: 0px;
+    width: 25px;
   }
 }
 
@@ -209,25 +243,20 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .add_button:hover {
   background: #a52a2a;
   color: var(--cor3);
 }
 
-.botao_remover, .favorito, .normal {
-  border: 0;
-  height: 25px;
-  left: 0px;
-  width: 25px;
-}
-
 .botao_favorito {
   grid-area: botao_favorito;
 }
-  
+
 .botao_remover {
-  grid-area: botao_remover;
   background: url('Imagens/lixeira.png');
+  background-size: cover;
+  grid-area: botao_remover;
 } 
 
 .descricao_de_jogo {
@@ -240,6 +269,7 @@ textarea {
 
 .favorito {
   background: url('Imagens/estrela_inteira.png');
+  background-size: cover;
 }
 
 .fonte_formulario {
@@ -260,6 +290,7 @@ textarea {
 
 .normal {
   background: url('Imagens/estrela_vazia.png');
+  background-size: cover;
 }
 
 .titulo_de_jogo {
