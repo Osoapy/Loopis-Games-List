@@ -16,7 +16,7 @@ if (contador == 1) { // SE NÃO TIVER NENHUM JOGO (CONTADOR == 1), DIGA QUE NÃO
   // COLOCANDO O SPAN NA LISTA
   listaDeJogosDiv.appendChild(spanElement);
   // COLOCANDO O TEXTO DENTRO DO SPAN
-  h2Element1.textContent = "Nenhum jogo foi adicionado ainda :(";
+  h2Element1.textContent = "Nenhum jogo foi adicionado ainda...";
   h2Element1.classList.add("fonte_formulario");
   spanElement.appendChild(h2Element1);
 }
@@ -201,7 +201,7 @@ function ordenarLocalStorage(numero) {
     // COLOCANDO O SPAN NA LISTA
     listaDeJogosDiv.appendChild(spanElement);
     // COLOCANDO O TEXTO DENTRO DO SPAN
-    h2Element1.textContent = "Nenhum jogo foi adicionado ainda :(";
+    h2Element1.textContent = "Nenhum jogo foi adicionado ainda...";
     h2Element1.classList.add("fonte_formulario");
     spanElement.appendChild(h2Element1);
   }
@@ -209,9 +209,9 @@ function ordenarLocalStorage(numero) {
 
 function ordenarHTML(elemento) {
   let elementoAtual = elemento;// RECEBE O ELEMENTO
-  let lista = elementoAtual.parentNode; // RECEBE A LISTA
+  let lista = elementoAtual.parentNode; // RECEBE A DIV DA GRID
   for(let k = 0; k < lista.childElementCount - 1; k++) {
-    if (lista.children[k].children[0].textContent.localeCompare(elementoAtual.children[0].textContent) > 0) {// SE O TEXTO 2 VIER PRIMEIRO NA ORDEM ALFABÉTICA
+    if (lista.children[k].children[3].children[0].textContent.localeCompare(elementoAtual.children[3].children[0].textContent) > 0) {// SE O TEXTO 2 VIER PRIMEIRO NA ORDEM ALFABÉTICA
       lista.insertBefore(elementoAtual, lista.children[k]);// DEIXE-O VIR PRIMEIRO
       break;// QUEBRE O LOOP
     }

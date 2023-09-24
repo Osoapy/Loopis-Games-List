@@ -1,6 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
+/* Altura > Largura */
+@media (orientation: portrait) {
+  input[type="radio"] {
+    transform: scale(2); 
+    margin-right: 10px;
+  }
+
+  textarea {
+    font-size: 3.5em;
+  }
+
+  #titulo {
+    font-size: 3.5em;
+  }
+  
+  #titulo_formulario, #titulo_lista {
+    font-size: 3.5em;
+  }
+
+  .fonte_formulario {
+    font-size: 2em;
+  }
+  
+  #corpo_do_site {
+    height: 145vh;
+    grid-template-areas:
+    "titulo titulo"
+    "inserir inserir"
+    "mostrar mostrar";
+    grid-template-rows: 10vh auto auto;
+  }
+
+  #container_inserir_jogos, #container_lista_de_jogos {
+    margin-bottom: 5vh;
+  }
+  
+  #inserir_jogos, #lista_de_jogos {
+    border: 4px solid var(--vermelho);
+    border-radius: 8px;
+    display: flex;
+    height: 60vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    max-height: 75vh;
+    max-width: 550px;
+    min-width: 300px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 60vw;
+  }
+}
+
+/* Altura < Largura */
+@media (orientation: landscape) {
+  #corpo_do_site {
+    height: 100vh;
+    grid-template-areas:
+    "titulo titulo"
+    "inserir mostrar";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 17vh 83vh;
+  }
+
+  #inserir_jogos, #lista_de_jogos {
+    border: 4px solid var(--vermelho);
+    border-radius: 8px;
+    display: flex;
+    height: 75vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    max-height: 75vh;
+    max-width: 550px;
+    min-width: 300px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 40vw;
+  }
+}
+
 * {
   box-sizing: border-box;
   z-index: 0;
@@ -42,12 +121,6 @@ textarea {
 #corpo_do_site {
   background-color: var(--preto);
   display: grid;
-  grid-template-areas:
-    "titulo titulo"
-    "inserir mostrar";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 17vh 83vh;
-  height: 100vh;
   margin: 0;
   max-width: 100vw;
   width: 100vw;
@@ -70,7 +143,7 @@ textarea {
 }
 
 #titulo_lista {
-  color: white;
+  color: var(--preto);
 }
 
 #container_inserir_jogos, #container_lista_de_jogos {
@@ -78,30 +151,22 @@ textarea {
   justify-content: center;
 }
 
-#inserir_jogos, #lista_de_jogos {
-  border: 4px solid var(--vermelho);
-  border-radius: 8px;
-  display: flex;
-  height: 75vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  max-height: 75vh;
-  max-width: 550px;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  width: 40vw;
+#container_inserir_jogos {
+  grid-area: inserir;
 }
 
 #inserir_jogos {
   background-color: var(--branco);
-  grid-area: inserir;
   justify-content: center;
 }
 
-#lista_de_jogos {
-  background-color: var(--preto);
-  flex-direction: column;
+#container_lista_de_jogos {
   grid-area: mostrar;
+}
+
+#lista_de_jogos {
+  background-color: var(--branco);
+  flex-direction: column;
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
@@ -128,6 +193,10 @@ textarea {
 
 #container_conteudo {
   grid-area: conteudo;
+}
+
+#sem_jogos {
+  color: var(--preto);
 }
 
 .add_button {
@@ -179,7 +248,7 @@ textarea {
 
 .jogo_na_lista {
   background-color: var(--branco);
-  border: 4px solid var(--branco);
+  border: 4px solid var(--preto);
   border-radius: 8px;
   display: grid;
   grid-template-areas: "imagem conteudo botao_remover botao_favorito";
